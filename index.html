@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Track progress reading chapters and books of the Bible">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="/bible-reader-tracker/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/bible-reader-tracker/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/bible-reader-tracker/favicon-16x16.png">
+    <link rel="manifest" href="/bible-reader-tracker/manifest.json">
+    <link rel="mask-icon" href="/bible-reader-tracker/safari-pinned-tab.svg" color="#9f8e6d">
+    <link rel="shortcut icon" href="/bible-reader-tracker/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Bible reader tracker">
+    <meta name="application-name" content="Bible reader tracker">
+    <meta name="msapplication-TileColor" content="#9f8e6d">
+    <meta name="msapplication-config" content="/bible-reader-tracker/browserconfig.xml">
+    <meta name="theme-color" content="#9f8e6d">
+
+    <link rel="stylesheet" type="text/css" href="main.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/spectre.css/dist/spectre-icons.min.css">
+
+    <title>Bible reader tracker</title>
+</head>
+
+<body>
+    <noscript>
+        <p style="text-align: center">
+            To use the Bible Reader Tracker JavaScript must be enabled
+        </p>
+    </noscript>
+
+    <h1>
+        Complete: <span id="complete">0%</span>
+    </h1>
+<div class="accordion">
+    <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="accordion-1">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="genesis-badge" class="badge" data-badge="0%">Genesis</span>
+    </label>
+    <div class="accordion-body">
+        <form style="margin-left: 40px; max-width: 500px" class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="genesis" onclick="test('genesis', 50)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 30</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 31</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 32</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 33</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 34</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 35</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 36</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 37</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 38</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 39</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 40</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 41</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 42</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 43</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 44</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 45</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 46</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 47</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 48</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 49</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 50</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="accordion-2">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="exodus-badge" class="badge" data-badge="0%">Exodus</span>
+    </label>
+    <div class="accordion-body">
+        <form style="margin-left: 40px; max-width: 500px" class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="exodus" onclick="test('exodus', 40)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 30</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 31</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 32</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 33</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 34</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 35</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 36</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 37</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 38</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 39</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 40</label>
+            </div>
+        </form>
+    </div>
+</div>
+        <div>Leviticus</div>
+        <div>Numbers</div>
+        <div>Deuteronomy</div>
+        <div>Joshua</div>
+        <div>Judges</div>
+        <div>Ruth</div>
+        <div>1 Samuel</div>
+        <div>2 Samuel</div>
+        <div>1 Kings</div>
+        <div>2 Kings</div>
+        <div>1 Chronicles</div>
+        <div>2 Chronicles</div>
+        <div>Ezra</div>
+        <div>Nehemiah</div>
+        <div>Esther</div>
+        <div>Job</div>
+        <div>Psalms</div>
+        <div>Proverbs</div>
+        <div>Ecclesiastes</div>
+        <div>Song</div>
+        <div>Isaiah</div>
+        <div>Jeremiah</div>
+        <div>Lamentations</div>
+        <div>Ezekiel</div>
+        <div>Daniel</div>
+        <div>Hosea</div>
+        <div>Joel</div>
+        <div>Amos</div>
+        <div>Obadiah</div>
+        <div>Jonah</div>
+        <div>Micah</div>
+        <div>Nahum</div>
+        <div>Habakkuk</div>
+        <div>Zephaniah</div>
+        <div>Haggai</div>
+        <div>Zechariah</div>
+        <div>Malachi</div>
+        <div>Matthew</div>
+        <div>Mark</div>
+        <div>Luke</div>
+        <div>John</div>
+        <div>Acts</div>
+        <div>Romans</div>
+        <div>1 Corinthians</div>
+        <div>2 Corinthians</div>
+        <div>Galatians</div>
+        <div>Ephesians</div>
+        <div>Philippians</div>
+        <div>Colossians</div>
+        <div>1 Thessalonians</div>
+        <div>2 Thessalonians</div>
+        <div>1 Timothy</div>
+        <div>2 Timothy</div>
+        <div>Titus</div>
+        <div>Philemon</div>
+        <div>Hebrews</div>
+        <div>James</div>
+        <div>1 Peter</div>
+        <div>2 Peter</div>
+        <div>1 John</div>
+        <div>2 John</div>
+        <div>3 John</div>
+        <div>Jude</div>
+        <div>Revelation</div>
+    </section>
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

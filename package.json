@@ -1,0 +1,30 @@
+{
+  "name": "bible-reader-tracker",
+  "version": "1.0.0",
+  "description": "Track progress reading chapters and books of the Bible",
+  "scripts": {
+    "build": "npm run copy && npm run minify:js -s && npm run minify:css -s && npm run sw",
+    "copy": "mkdir -p docs && cp index.html docs/ && cp *.png docs/ && cp *.svg docs/ && cp -r images docs/ && cp *.xml docs/ && cp favicon.ico docs/ && cp manifest.json docs/",
+    "minify:js": "uglifyjs --compress --mangle -o docs/app.min.js -- app.js",
+    "minify:css": "cleancss main.css -o docs/main.min.css",
+    "sw": "workbox generateSW workbox-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciwchris/bible-reader-tracker.git"
+  },
+  "author": "ciwchris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciwchris/bible-reader-tracker/issues"
+  },
+  "homepage": "https://github.com/ciwchris/bible-reader-tracker#readme",
+  "devDependencies": {
+    "clean-css-cli": "^4.2.1",
+    "uglify-es": "^3.3.9",
+    "workbox-cli": "^3.6.2"
+  },
+  "dependencies": {
+    "spectre.css": "^0.5.8"
+  }
+}
