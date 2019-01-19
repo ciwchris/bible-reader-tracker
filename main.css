@@ -1,2 +1,29 @@
+.header {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+}
+
+.content {
+    padding-top: 60px;
+}
+
+form {
+    margin-left: 40px;
+    max-width: 500px;
+}
+
+.section {
+    font-size: 1.1rem;
+}
+
+body div.accordion input:checked ~ div.accordion-body,
+body div.accordion[open] div.accordion-body {
+    max-height: 200rem;
+}
+
 @media screen and (max-width: 800px) {
 }

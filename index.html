@@ -19,7 +19,7 @@
     <meta name="msapplication-config" content="/bible-reader-tracker/browserconfig.xml">
     <meta name="theme-color" content="#9f8e6d">
 
-    <link rel="stylesheet" type="text/css" href="main.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="node_modules/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" type="text/css" href="node_modules/spectre.css/dist/spectre-icons.min.css">
 
@@ -33,17 +33,29 @@
         </p>
     </noscript>
 
-    <h1>
+    <h1 class="text-primary header">
         Complete: <span id="complete">0%</span>
     </h1>
+
+<div class="content">
+<div class="divider text-center" data-content="CHAPTERS"></div>
+
 <div class="accordion">
-    <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
-    <label class="accordion-header" for="accordion-1">
+    <input type="checkbox" id="old-testament-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="old-testament-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span class="section text-primary">Old Testament</span>
+    </label>
+    <div class="accordion-body">
+
+
+<div class="accordion">
+    <input type="checkbox" id="genesis-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="genesis-accordion">
         <i class="icon icon-arrow-right mr-1"></i> <span id="genesis-badge" class="badge" data-badge="0%">Genesis</span>
     </label>
     <div class="accordion-body">
-        <form style="margin-left: 40px; max-width: 500px" class="form-horizontal col-6 col-sm-10">
-            <div class="form-group" id="genesis" onclick="test('genesis', 50)">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="genesis" onclick="calculateBookPercentage('genesis', 50)">
                 <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
                 <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
                 <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
@@ -99,13 +111,13 @@
     </div>
 </div>
 <div class="accordion">
-    <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden>
-    <label class="accordion-header" for="accordion-2">
+    <input type="checkbox" id="exodus-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="exodus-accordion">
         <i class="icon icon-arrow-right mr-1"></i> <span id="exodus-badge" class="badge" data-badge="0%">Exodus</span>
     </label>
     <div class="accordion-body">
-        <form style="margin-left: 40px; max-width: 500px" class="form-horizontal col-6 col-sm-10">
-            <div class="form-group" id="exodus" onclick="test('exodus', 40)">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="exodus" onclick="calculateBookPercentage('exodus', 40)">
                 <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
                 <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
                 <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
@@ -150,71 +162,1188 @@
         </form>
     </div>
 </div>
-        <div>Leviticus</div>
-        <div>Numbers</div>
-        <div>Deuteronomy</div>
-        <div>Joshua</div>
-        <div>Judges</div>
-        <div>Ruth</div>
-        <div>1 Samuel</div>
-        <div>2 Samuel</div>
-        <div>1 Kings</div>
-        <div>2 Kings</div>
-        <div>1 Chronicles</div>
-        <div>2 Chronicles</div>
-        <div>Ezra</div>
-        <div>Nehemiah</div>
-        <div>Esther</div>
-        <div>Job</div>
-        <div>Psalms</div>
-        <div>Proverbs</div>
-        <div>Ecclesiastes</div>
-        <div>Song</div>
-        <div>Isaiah</div>
-        <div>Jeremiah</div>
-        <div>Lamentations</div>
-        <div>Ezekiel</div>
-        <div>Daniel</div>
-        <div>Hosea</div>
-        <div>Joel</div>
-        <div>Amos</div>
-        <div>Obadiah</div>
-        <div>Jonah</div>
-        <div>Micah</div>
-        <div>Nahum</div>
-        <div>Habakkuk</div>
-        <div>Zephaniah</div>
-        <div>Haggai</div>
-        <div>Zechariah</div>
-        <div>Malachi</div>
-        <div>Matthew</div>
-        <div>Mark</div>
-        <div>Luke</div>
-        <div>John</div>
-        <div>Acts</div>
-        <div>Romans</div>
-        <div>1 Corinthians</div>
-        <div>2 Corinthians</div>
-        <div>Galatians</div>
-        <div>Ephesians</div>
-        <div>Philippians</div>
-        <div>Colossians</div>
-        <div>1 Thessalonians</div>
-        <div>2 Thessalonians</div>
-        <div>1 Timothy</div>
-        <div>2 Timothy</div>
-        <div>Titus</div>
-        <div>Philemon</div>
-        <div>Hebrews</div>
-        <div>James</div>
-        <div>1 Peter</div>
-        <div>2 Peter</div>
-        <div>1 John</div>
-        <div>2 John</div>
-        <div>3 John</div>
-        <div>Jude</div>
-        <div>Revelation</div>
-    </section>
+<div class="accordion">
+    <input type="checkbox" id="leviticus-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="leviticus-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="leviticus-badge" class="badge" data-badge="0%">Leviticus</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="leviticus" onclick="calculateBookPercentage('leviticus', 27)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="numbers-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="numbers-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="numbers-badge" class="badge" data-badge="0%">Numbers</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="numbers" onclick="calculateBookPercentage('numbers', 36)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 30</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 31</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 32</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 33</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 34</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 35</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 36</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="deuteronomy-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="deuteronomy-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="deuteronomy-badge" class="badge" data-badge="0%">Deuteronomy</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="deuteronomy" onclick="calculateBookPercentage('deuteronomy', 34)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 30</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 31</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 32</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 33</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 34</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="joshua-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="joshua-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="joshua-badge" class="badge" data-badge="0%">Joshua</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="joshua" onclick="calculateBookPercentage('joshua', 24)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="judges-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="judges-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="judges-badge" class="badge" data-badge="0%">Judges</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="judges" onclick="calculateBookPercentage('judges', 21)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="ruth-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="ruth-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="ruth-badge" class="badge" data-badge="0%">Ruth</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="ruth" onclick="calculateBookPercentage('ruth', 4)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firstsamuel-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firstsamuel-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firstsamuel-badge" class="badge" data-badge="0%">1 Samuel</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firstsamuel" onclick="calculateBookPercentage('firstsamuel', 31)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 30</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 31</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondsamuel-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondsamuel-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondsamuel-badge" class="badge" data-badge="0%">2 Samuel</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondsamuel" onclick="calculateBookPercentage('secondsamuel', 24)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firstkings-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firstkings-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firstkings-badge" class="badge" data-badge="0%">1 Kings</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firstkings" onclick="calculateBookPercentage('firstkings', 22)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondkings-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondkings-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondkings-badge" class="badge" data-badge="0%">2 Kings</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondkings" onclick="calculateBookPercentage('secondkings', 25)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firstchronicles-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firstchronicles-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firstchronicles-badge" class="badge" data-badge="0%">1 Chronicles</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firstchronicles" onclick="calculateBookPercentage('firstchronicles', 29)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondchronicles-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondchronicles-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondchronicles-badge" class="badge" data-badge="0%">2 Chronicles</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondchronicles" onclick="calculateBookPercentage('secondchronicles', 36)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 30</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 31</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 32</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 33</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 34</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 35</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 36</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="ezra-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="ezra-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="ezra-badge" class="badge" data-badge="0%">Ezra</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="ezra" onclick="calculateBookPercentage('ezra', 10)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="nehemiah-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="nehemiah-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="nehemiah-badge" class="badge" data-badge="0%">Nehemiah</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="nehemiah" onclick="calculateBookPercentage('nehemiah', 36)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="esther-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="esther-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="esther-badge" class="badge" data-badge="0%">Esther</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="esther" onclick="calculateBookPercentage('esther', 10)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="job-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="job-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="job-badge" class="badge" data-badge="0%">Job</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="job" onclick="calculateBookPercentage('job', 42)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 29</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 30</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 31</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 32</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 33</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 34</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 35</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 36</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 37</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 37</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 39</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 40</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 41</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 42</label>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="new-testament-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="new-testament-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span class="section text-primary">New Testament</span>
+    </label>
+    <div class="accordion-body">
+
+<div class="accordion">
+    <input type="checkbox" id="matthew-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="matthew-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="matthew-badge" class="badge" data-badge="0%">Matthew</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="matthew" onclick="calculateBookPercentage('matthew', 28)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="mark-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="mark-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="mark-badge" class="badge" data-badge="0%">Mark</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="mark" onclick="calculateBookPercentage('mark', 16)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="luke-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="luke-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="luke-badge" class="badge" data-badge="0%">Luke</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="luke" onclick="calculateBookPercentage('luke', 24)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="john-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="john-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="john-badge" class="badge" data-badge="0%">John</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="john" onclick="calculateBookPercentage('john', 21)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="acts-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="acts-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="acts-badge" class="badge" data-badge="0%">Acts</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="acts" onclick="calculateBookPercentage('acts', 28)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 23</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 24</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 25</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 26</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 27</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 28</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="romans-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="romans-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="romans-badge" class="badge" data-badge="0%">Romans</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="romans" onclick="calculateBookPercentage('romans', 16)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firstcorinthians-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firstcorinthians-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firstcorinthians-badge" class="badge" data-badge="0%">1 Corinthians</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firstcorinthians" onclick="calculateBookPercentage('firstcorinthians', 16)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondcorinthians-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondcorinthians-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondcorinthians-badge" class="badge" data-badge="0%">2 Condcorinthians</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondcorinthians" onclick="calculateBookPercentage('secondcorinthians', 13)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="galations-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="galations-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="galations-badge" class="badge" data-badge="0%">Galations</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="galations" onclick="calculateBookPercentage('galations', 6)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="ephesians-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="ephesians-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="ephesians-badge" class="badge" data-badge="0%">Ephesians</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="ephesians" onclick="calculateBookPercentage('ephesians', 6)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="philippians-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="philippians-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="philippians-badge" class="badge" data-badge="0%">Philippians</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="philippians" onclick="calculateBookPercentage('philippians', 4)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="colossians-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="colossians-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="colossians-badge" class="badge" data-badge="0%">Colossians</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="colossians" onclick="calculateBookPercentage('colossians', 4)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firstthessalonians-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firstthessalonians-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firstthessalonians-badge" class="badge" data-badge="0%">1 Thessalonians</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firstthessalonians" onclick="calculateBookPercentage('firstthessalonians', e6)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondthessalonians-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondthessalonians-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondthessalonians-badge" class="badge" data-badge="0%">2 Thessalonians</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondthessalonians" onclick="calculateBookPercentage('secondthessalonians', 3)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firsttimothy-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firsttimothy-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firsttimothy-badge" class="badge" data-badge="0%">1 Timothy</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firsttimothy" onclick="calculateBookPercentage('firsttimothy', 6)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondtimothy-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondtimothy-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondtimothy-badge" class="badge" data-badge="0%">2 Timothy</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondtimothy" onclick="calculateBookPercentage('secondtimothy', 4)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="titus-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="titus-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="titus-badge" class="badge" data-badge="0%">Titus</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="titus" onclick="calculateBookPercentage('titus', 3)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="philemon-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="philemon-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="philemon-badge" class="badge" data-badge="0%">Philemon</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="philemon" onclick="calculateBookPercentage('philemon', 1)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="hebrews-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="hebrews-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="hebrews-badge" class="badge" data-badge="0%">Hebrews</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="hebrews" onclick="calculateBookPercentage('hebrews', 13)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="james-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="james-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="james-badge" class="badge" data-badge="0%">James</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="james" onclick="calculateBookPercentage('james', 5)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firstpeter-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firstpeter-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firstpeter-badge" class="badge" data-badge="0%">1 Peter</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firstpeter" onclick="calculateBookPercentage('firstpeter', 5)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondpeter-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondpeter-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondpeter-badge" class="badge" data-badge="0%">2 Peter</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondpeter" onclick="calculateBookPercentage('secondpeter', 3)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="firstjohn-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="firstjohn-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="firstjohn-badge" class="badge" data-badge="0%">1 John</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="firstjohn" onclick="calculateBookPercentage('firstjohn', 5)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="secondjohn-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="secondjohn-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="secondjohn-badge" class="badge" data-badge="0%">2 John</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="secondjohn" onclick="calculateBookPercentage('secondjohn', 1)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="thirdjohn-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="thirdjohn-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="thirdjohn-badge" class="badge" data-badge="0%">3 John</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="thirdjohn" onclick="calculateBookPercentage('thirdjohn', 1)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="jude-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="jude-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="jude-badge" class="badge" data-badge="0%">Jude</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="jude" onclick="calculateBookPercentage('jude', 1)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="accordion">
+    <input type="checkbox" id="revelations-accordion" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="revelations-accordion">
+        <i class="icon icon-arrow-right mr-1"></i> <span id="revelations-badge" class="badge" data-badge="0%">Revelations</span>
+    </label>
+    <div class="accordion-body">
+        <form class="form-horizontal col-6 col-sm-10">
+            <div class="form-group" id="revelations" onclick="calculateBookPercentage('revelations', 22)">
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 1&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 2&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 3&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 4&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 5&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 6&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 7&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 8&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 9&nbsp;</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 10</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 11</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 12</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 13</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 14</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 15</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 16</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 17</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 18</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 19</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 20</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 21</label>
+                <label class="form-checkbox"><input type="checkbox"><i class="form-icon"></i> 22</label>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+</div>
 
     <script type="text/javascript" src="app.js"></script>
 </body>
