@@ -4,7 +4,8 @@
   "description": "Track progress reading chapters and books of the Bible",
   "scripts": {
     "build": "npm run copy && npm run minify:js -s && npm run minify:css -s && npm run sw",
-    "copy": "mkdir -p docs && cp index.html docs/ && cp *.png docs/ && cp *.svg docs/ && cp -r images docs/ && cp *.xml docs/ && cp favicon.ico docs/ && cp manifest.json docs/",
+    "copy": "mkdir -p docs && cp index.html docs/ && cp *.png docs/ && cp *.svg docs/ && cp -r images docs/ && cp *.xml docs/ && cp favicon.ico docs/ && cp manifest.json docs/ && npm run copy-dependencies",
+    "copy-dependencies": "cp node_modules/idb-keyval/dist/idb-keyval-iife.min.js docs/ && cp node_modules/spectre.css/dist/spectre.min.css docs/ && cp node_modules/spectre.css/dist/spectre-icons.min.css docs/",
     "minify:js": "uglifyjs --compress --mangle -o docs/app.min.js -- app.js",
     "minify:css": "cleancss main.css -o docs/main.min.css",
     "sw": "workbox generateSW workbox-config.js"

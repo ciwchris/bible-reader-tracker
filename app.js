@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('bible-reader-tracker/sw.js', { scope: '/bible-reader-tracker/' })
+        .register('/bible-reader-tracker/sw.js', { scope: '/bible-reader-tracker/' })
         .then(function(reg) {
             if (reg.installing) {
                 console.log('Service worker installing');
