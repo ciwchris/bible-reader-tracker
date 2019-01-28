@@ -16,6 +16,23 @@ if ('serviceWorker' in navigator) {
         });
 }
 
+function setCompletetionDate(totalChapters, completedChapters) {
+    var days = dayOfTheYear();
+
+    var thisYear = new Date().getFullYear();
+    var numberOfDaysToComplete = Math.ceil((days / completedChapters) * totalChapters);
+    var endingDate = new Date(thisYear, 0, numberOfDaysToComplete);
+    document.querySelector('#finish').textContent = endingDate.toLocaleDateString();
+}
+
+function dayOfTheYear() {
+    var now = new Date();
+    var start = new Date(now.getFullYear(), 0, 0);
+    var diff = now - start;
+    var oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+}
+
 var books = {};
 
 idbKeyval.get('books').then(function(cacheBooks) {
@@ -59,8 +76,12 @@ function setBiblePercentage() {
     for (var name in books) {
         completedChapters += books[name].filter(chapterStatus => chapterStatus).length;
     }
-    document.querySelector('#complete').textContent =
-        Math.floor((completedChapters / totalChapters) * 100) + '%';
+
+    var percentComplete = Math.floor((completedChapters / totalChapters) * 100) + '%';
+    document.querySelector('#complete').textContent = percentComplete;
+    document.querySelector('#progress-bar').style.width = percentComplete;
+
+    setCompletetionDate(totalChapters, completedChapters);
 }
 
 function setBookPercentage(book, count) {
