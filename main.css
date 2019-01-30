@@ -9,6 +9,7 @@
     z-index: 1000;
     width: 100%;
     background-color: white;
+    text-align: center;
 }
 
 .content {
@@ -19,6 +20,9 @@ form {
     margin-left: 40px;
     max-width: 500px;
 }
+
+label.form-checkbox { width: 50px; }
+#psalms label.form-checkbox { width: 55px; }
 
 .section {
     font-size: 1.1rem;
