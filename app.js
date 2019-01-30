@@ -17,12 +17,16 @@ if ('serviceWorker' in navigator) {
 }
 
 function setCompletetionDate(totalChapters, completedChapters) {
-    var days = dayOfTheYear();
+    if (completedChapters > 0) {
+        var days = dayOfTheYear();
 
-    var thisYear = new Date().getFullYear();
-    var numberOfDaysToComplete = Math.ceil((days / completedChapters) * totalChapters);
-    var endingDate = new Date(thisYear, 0, numberOfDaysToComplete);
-    document.querySelector('#finish').textContent = endingDate.toLocaleDateString();
+        var thisYear = new Date().getFullYear();
+        var numberOfDaysToComplete = Math.ceil((days / completedChapters) * totalChapters);
+        var endingDate = new Date(thisYear, 0, numberOfDaysToComplete);
+        document.querySelector('#finish-date').textContent = endingDate.toLocaleDateString();
+    } else {
+        document.querySelector('#finish').style.display = 'none';
+    }
 }
 
 function dayOfTheYear() {
