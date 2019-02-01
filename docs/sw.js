@@ -29,7 +29,7 @@ self.__precacheManifest = [
   },
   {
     "url": "app.min.js",
-    "revision": "2d527c8815cd3041282b363c3ecdfc05"
+    "revision": "62af2d1f2fe53c077aa4616a60dccff6"
   },
   {
     "url": "apple-touch-icon.png",
@@ -89,7 +89,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "482093f5e6a10820378ae435f8691a16"
+    "revision": "231cfcce05e513f362a2368ce758f3a8"
   },
   {
     "url": "main.min.css",
