@@ -23,7 +23,7 @@
   "devDependencies": {
     "clean-css-cli": "^4.2.1",
     "uglify-es": "^3.3.9",
-    "workbox-cli": "^3.6.2"
+    "workbox-cli": "^5.1.2"
   },
   "dependencies": {
     "idb-keyval": "^3.1.0",
