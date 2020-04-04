@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/ciwchris/bible-reader-tracker#readme",
   "devDependencies": {
-    "clean-css-cli": "^4.2.1",
+    "clean-css-cli": "^4.3.0",
     "uglify-es": "^3.3.9",
     "workbox-cli": "^5.1.2"
   },
